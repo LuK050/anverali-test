@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  anverali_test:
+    build: .
+    env_file: ".env"
+    container_name: "anverali_test"
+    command: "poetry run python ./anverali_test/main.py"
+    volumes:
+      - ".:/usr/src/anverali_test"
+    depends_on:
+      - "pgdb"
+
+  pgdb:
+    image: "postgres"
+    env_file: ".env"
+    container_name: "pgdb"
+    volumes:
+      - "pgdbdata:/var/lib/postgresql/data/"
+
+volumes:
+  pgdbdata: null

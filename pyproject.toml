@@ -1,13 +1,18 @@
 [tool.poetry]
-name = "python-template"
-version = "0.0.0"
+name = "anverali-test"
+version = "1.0.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Kirill Volychev <volychevk@gmail.com>"]
 readme = "README.md"
-packages = [{include = "python_template"}]
+packages = [{include = "anverali_test"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.12"
+fast-bitrix24 = "^1.7.1"
+sqlalchemy = "^2.0.29"
+asyncpg = "^0.29.0"
+asyncache = "^0.3.1"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.7.0"
