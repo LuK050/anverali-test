@@ -19,13 +19,6 @@ async def main():
     gender: str | None = None
 
     async with AsyncSession() as session:
-        new_name = ManName(
-            name="Кирилл"
-        )
-        session.add(new_name)
-        await session.commit()
-
-    async with AsyncSession() as session:
         stmt: ReturnsRows = select(ManName).where(ManName.name.ilike(name))
         result: ManName = (await session.execute(stmt)).first()
 
